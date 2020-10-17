@@ -25,7 +25,11 @@ namespace DevMath
 
         public void UpdateVelocityWithForce(Vector2 forceDirection, float forceNewton, float deltaTime)
         {
-            throw new NotImplementedException();
+            normalForce = 9.81f * mass;
+            float friction = frictionCoefficient * normalForce;
+            float forceNetto = forceNewton - friction;
+            Acceleration = forceNetto * mass;
+            Velocity = forceDirection * Acceleration* deltaTime;
         }
     }
 }
