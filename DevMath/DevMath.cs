@@ -50,12 +50,12 @@ namespace DevMath
 
         public static float RadToDeg(float angle)
         {
-            return (angle * ((float)Math.PI / 180));
+            return (angle * (180 / (float)Math.PI));
         }
 
         public static float DegToRad(float angle)
-        {
-            return (angle * (180 / (float)Math.PI));
+        { 
+            return (angle * ((float)Math.PI / 180));
         }
     }
 }

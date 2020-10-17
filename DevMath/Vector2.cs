@@ -55,14 +55,15 @@ namespace DevMath
 
         public static float Angle(Vector2 lhs, Vector2 rhs)
         {
-            return ((float)Math.Atan2(rhs.x, rhs.y) - (float)Math.Atan2(lhs.x, lhs.y));
+            // return ((float)Math.Atan2(rhs.x, rhs.y) - (float)Math.Atan2(lhs.x, lhs.y));
+            return (float)Math.Atan2(lhs.y - rhs.y, lhs.x - rhs.x) - (float)Math.PI;
         }
 
         public static Vector2 DirectionFromAngle(float angle)
         {
             //float _x = (float)Math.Cos(angle);
             //float _y = (float)Math.Sin(angle);
-            DevMath.DegToRad(angle);
+            angle = DevMath.DegToRad(angle);
             return new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle));
         }
 
